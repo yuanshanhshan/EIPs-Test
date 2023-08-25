@@ -11,7 +11,7 @@ contract MultiAssetTokenMock is MultiAssetToken {
         string memory name,
         string memory symbol
     ) MultiAssetToken(name, symbol) {
-        _setIssuer(_msgSender());
+        _setIssuer(msg.origin);
     }
 
     modifier onlyIssuer() {
