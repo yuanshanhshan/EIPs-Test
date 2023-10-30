@@ -25,8 +25,14 @@ async function readERC3525(contractAdd:string, owner: Typed) {
 //   process.exitCode = 1;
 // });
 
+const contractAddress= "0x642A95856b02AF873e0DE4ae33ba9C9B129E2Daf"
 
-readERC3525('0x642A95856b02AF873e0DE4ae33ba9C9B129E2Daf',Typed.address('0x562dd807824B816f484Dd7a0b74005c955A71A5C')).catch((error) => {
+readERC3525(contractAddress,Typed.address('0x562dd807824B816f484Dd7a0b74005c955A71A5C')).catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+readERC3525(contractAddress, Typed.uint256('1')).catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+})
